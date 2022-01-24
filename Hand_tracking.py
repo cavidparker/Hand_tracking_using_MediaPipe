@@ -16,8 +16,9 @@ while True:
     print(results.multi_hand_landmarks)
 
     if results.multi_hand_landmarks:
+        # hand landmarks
         for handLms in results.multi_hand_landmarks:
-            mpDraw.draw_landmarks(img, handLms)
+            mpDraw.draw_landmarks(img, handLms, mpHand.HAND_CONNECTIONS)
 
     cv2.imshow('img', img)
     if cv2.waitKey(1) & 0xFF == ord('q'):
